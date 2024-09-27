@@ -1,14 +1,19 @@
-import React from 'react'
+import React from 'react';
 
 export const Card = () => {
     return (
         <div>
-            <div className="card mt-3" style={{ "width": "18rem", "maxHeight": "360px" }}>
-                <img className="card-img-top" src="..." alt="..." />
+            <div className="card mt-3" style={{ width: "18rem", maxHeight: "360px" }}>
+                <img
+                    className="card-img-top"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXaTRZUVnq0MohBVlWJXNMaGYTlGgJTRkCgQ&s"
+                    alt="Food"
+                    style={{ height: "150px", objectFit: "cover" }} // Balanced image height
+                />
                 <div className="card-body">
                     <h5 className="card-title">Card title</h5>
                     <p className="card-text">This is some imp text</p>
-                    <div className='container w=100'>
+                    <div className='container w-100'>
                         <select className='m-2 h-100 bg-success rounded'>
                             {Array.from(Array(6), (e, i) => {
                                 return (
@@ -27,5 +32,5 @@ export const Card = () => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
