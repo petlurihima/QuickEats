@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "categoryName": "Biryani/Rice"
+    },
+    {
+        "id": 2,
+        "categoryName": "Starters"
+    },
+    {
+        "id": 3,
+        "categoryName": "Pizza"
+    },
+    {
+        "id": 4,
+        "categoryName": "Burgers"
+    },
+    {
+        "id": 5,
+        "categoryName": "Desserts"
+    }
+]

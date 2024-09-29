@@ -1,0 +1,120 @@
+[
+    {
+        "CategoryName": "Biryani/Rice",
+        "name": "Chicken Biryani",
+        "img": "https://cdn.pixabay.com/photo/2019/11/04/12/16/rice-4601049__340.jpg",
+        "options": [
+            {
+                "half": "170",
+                "full": "300"
+            }
+        ],
+        "description": "Made using Indian masalas and Basmati rice. Barbequed pieces of Chicken were added."
+    },
+    {
+        "CategoryName": "Biryani/Rice",
+        "name": "Veg Biryani",
+        "img": "https://media.istockphoto.com/photos/veg-biryani-picture-id1363306527?b=1&k=20&m=1363306527&s=170667a&w=0&h=VCbro7CX8nq2kruynWOCO2GbMGCea2dDJy6O6ebCKD0=",
+        "options": [
+            {
+                "half": "150",
+                "full": "260"
+            }
+        ],
+        "description": "Basmati rice and fresh vegetables, cooked with aromatic Indian spices."
+    },
+    {
+        "CategoryName": "Pizza",
+        "name": "Chicken Cheese Pizza",
+        "img": "https://media.istockphoto.com/photos/double-topping-pizza-on-the-wooden-desk-isolated-picture-id1074109872?k=20&m=1074109872&s=612x612&w=0&h=JoYwwTfU_mMBykXpRB_DmgeecfotutOIO9pV5_JObpk=",
+        "options": [
+            {
+                "regular": "120",
+                "medium": "230",
+                "large": "350"
+            }
+        ],
+        "description": "Delicious chicken with extra cheese, baked to perfection on a thin crust."
+    },
+    {
+        "CategoryName": "Pizza",
+        "name": "Mix Veg Pizza",
+        "img": "https://media.istockphoto.com/photos/chinese-food-veg-pizza-picture-id1341905237?k=20&m=1341905237&s=612x612&w=0&h=Lbuza1Ig5cC1PwQhqTsq-Uac8hg1W-V0Wx4d4lqDeB0=",
+        "options": [
+            {
+                "regular": "100",
+                "medium": "200",
+                "large": "300"
+            }
+        ],
+        "description": "A combination of fresh vegetables and cheese on a crispy base."
+    },
+    {
+        "CategoryName": "Desserts",
+        "name": "Gulab Jamun",
+        "img": "https://media.istockphoto.com/photos/gulab-jamun-with-sweet-syrup-in-bowl-picture-id184974278?k=20&m=184974278&s=612x612&w=0&h=f1hHckI8NdNs2a3oFDDQp-4AXE7V1R-Wts6Knb5HvSU=",
+        "options": [
+            {
+                "price": "50"
+            }
+        ],
+        "description": "Soft, melt-in-your-mouth milk solids deep-fried and soaked in sugar syrup."
+    },
+    {
+        "CategoryName": "Desserts",
+        "name": "Ras Malai",
+        "img": "https://media.istockphoto.com/photos/rasmalai-picture-id485465355?k=20&m=485465355&s=612x612&w=0&h=o5PVMF9oA2ITxDwTjSXS9tXcDtfiUk3I9lToT2SkpeM=",
+        "options": [
+            {
+                "price": "70"
+            }
+        ],
+        "description": "Creamy, soft, and flavorful, made from paneer soaked in sweetened milk."
+    },
+    {
+        "CategoryName": "Burgers",
+        "name": "Chicken Burger",
+        "img": "https://media.istockphoto.com/photos/chicken-burger-with-cheese-on-a-wooden-board-picture-id1280090327?k=20&m=1280090327&s=612x612&w=0&h=FKM-RkAlZQsSzGlNBzMz39-k4dnClQ6HDyWkbnshQ_w=",
+        "options": [
+            {
+                "price": "120"
+            }
+        ],
+        "description": "Grilled chicken patty with lettuce, tomatoes, onions, and mayonnaise."
+    },
+    {
+        "CategoryName": "Burgers",
+        "name": "Veggie Burger",
+        "img": "https://media.istockphoto.com/photos/veggie-burger-picture-id538528502?k=20&m=538528502&s=612x612&w=0&h=3p3O9fJb9jYHDgf8BtOZKrPFXy_dBdYDpFDRnuZhCx4=",
+        "options": [
+            {
+                "price": "100"
+            }
+        ],
+        "description": "Crispy veggie patty with lettuce, onions, tomatoes, and special sauce."
+    },
+    {
+        "CategoryName": "Starters",
+        "name": "Chilli Paneer",
+        "img": "https://media.istockphoto.com/photos/spicy-paneer-or-chilli-paneer-or-paneer-tikka-or-cottage-cheese-in-picture-id697316634?b=1&k=20&m=697316634&s=170667a&w=0&h=bctfHdYTz9q2dJUnuxGRDUUwC9UBWjL_oQo5ECVVDAs=",
+        "options": [
+            {
+                "half": "120",
+                "full": "200"
+            }
+        ],
+        "description": "Spicy paneer chunks stir-fried with bell peppers, onions, and Indian spices."
+    },
+    {
+        "CategoryName": "Starters",
+        "name": "Chicken Tikka",
+        "img": "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2hpY2tlbiUyMHRpa2thfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+        "options": [
+            {
+                "half": "170",
+                "full": "300"
+            }
+        ],
+        "description": "Marinated chicken grilled to perfection with Indian spices."
+    }
+]
