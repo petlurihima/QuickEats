@@ -13,6 +13,42 @@
     },
     {
         "CategoryName": "Biryani/Rice",
+        "name": "Chicken Fried Rice",
+        "img": "https://images.unsplash.com/photo-1603133872878-684f208fb84b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2hpY2tlbiUyMGZyaWVkJTIwcmljZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+        "options": [
+            {
+                "half": "130",
+                "full": "220"
+            }
+        ],
+        "description": "Made using Indian masalas and Basmati rice. Barbequed pieces of Paneer/Chicken/Mutton were added."
+    },
+    {
+        "CategoryName": "Biryani/Rice",
+        "name": "Fish Biryani",
+        "img": "https://media.istockphoto.com/photos/king-fish-biryani-with-raita-served-in-a-golden-dish-isolated-on-dark-picture-id1409942571?b=1&k=20&m=1409942571&s=170667a&w=0&h=ozlMJf5hsDmS2sSdEdBWnoSZOEITef4qGMeWeq2lyTc=",
+        "options": [
+            {
+                "half": "200",
+                "full": "320"
+            }
+        ],
+        "description": "Made using Indian masalas and Basmati rice. Barbequed pieces of Paneer/Chicken/Mutton were added."
+    },
+    {
+        "CategoryName": "Biryani/Rice",
+        "name": "Veg Fried Rice",
+        "img": "https://images.unsplash.com/photo-1645177628172-a94c1f96e6db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dmVnJTIwZnJpZWQlMjByaWNlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+        "options": [
+            {
+                "half": "110",
+                "full": "200"
+            }
+        ],
+        "description": "Made using Indian masalas and Basmati rice. Barbequed pieces of Paneer/Chicken/Mutton were added."
+    },
+    {
+        "CategoryName": "Biryani/Rice",
         "name": "Veg Biryani",
         "img": "https://media.istockphoto.com/photos/veg-biryani-picture-id1363306527?b=1&k=20&m=1363306527&s=170667a&w=0&h=VCbro7CX8nq2kruynWOCO2GbMGCea2dDJy6O6ebCKD0=",
         "options": [
@@ -116,5 +152,17 @@
             }
         ],
         "description": "Marinated chicken grilled to perfection with Indian spices."
+    },
+    {
+        "CategoryName": "Starter",
+        "name": "Paneer 65",
+        "img": "https://media.istockphoto.com/photos/paneer-tikka-kabab-in-red-sauce-is-an-indian-dish-made-from-chunks-of-picture-id1257507446?b=1&k=20&m=1257507446&s=170667a&w=0&h=Nd7QsslbvPqOcvwu1bY0rEPZXJqwoKTYCal3nty4X-Y=",
+        "options": [
+            {
+                "half": "150",
+                "full": "260"
+            }
+        ],
+        "description": "Made using Indian masalas and Basmati rice. Barbequed pieces of Paneer/Chicken/Mutton were added."
     }
 ]
