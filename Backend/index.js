@@ -6,6 +6,9 @@ const mongoDB = require('./db');
 // Initialize MongoDB connection
 mongoDB();
 
+app.use(express.json())
+app.use('/api',require("./Routes/CreateUser"));
+
 app.get('/', (req, res) => {
     res.send('Hello World!');
 });
