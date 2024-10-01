@@ -91,13 +91,13 @@ export const Signup = () => {
                         />
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="address" className="form-label">Address</label>
+                        <label htmlFor="geolocation" className="form-label">Location</label>
                         <input
                             type="text"
                             className="form-control"
-                            id="address"
-                            name="address"
-                            value={credentials.address}
+                            id="geolocation"
+                            name="geolocation"
+                            value={credentials.geolocation}
                             onChange={onChange}
                         />
                     </div>
