@@ -21,7 +21,7 @@
                 "full": "220"
             }
         ],
-        "description": "Made using Indian masalas and Basmati rice. Barbequed pieces of Paneer/Chicken/Mutton were added."
+        "description": "Made using Indian masalas and Basmati rice. Barbequed pieces of Chicken were added."
     },
     {
         "CategoryName": "Biryani/Rice",
@@ -33,7 +33,7 @@
                 "full": "320"
             }
         ],
-        "description": "Made using Indian masalas and Basmati rice. Barbequed pieces of Paneer/Chicken/Mutton were added."
+        "description": "Made using Indian masalas and Basmati rice. Barbequed pieces of Fish were added."
     },
     {
         "CategoryName": "Biryani/Rice",
@@ -45,7 +45,7 @@
                 "full": "200"
             }
         ],
-        "description": "Made using Indian masalas and Basmati rice. Barbequed pieces of Paneer/Chicken/Mutton were added."
+        "description": "Made using Indian masalas and Basmati rice. Barbequed pieces of Paneer and Veggies were added."
     },
     {
         "CategoryName": "Biryani/Rice",
@@ -163,6 +163,6 @@
                 "full": "260"
             }
         ],
-        "description": "Made using Indian masalas and Basmati rice. Barbequed pieces of Paneer/Chicken/Mutton were added."
+        "description": "Made using Indian masalas and Basmati rice. Barbequed pieces of Paneer were added."
     }
 ]
