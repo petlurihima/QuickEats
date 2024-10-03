@@ -5,6 +5,8 @@ export const Card = (props) => {
 
     let priceOptions = Object.keys(options[0]); // Accessing the options array
 
+    const handleAddCart=()=>{}
+
     return (
         <div>
             <div className="card mt-3" style={{ width: "18rem", maxHeight: "460px" }}>
@@ -35,6 +37,8 @@ export const Card = (props) => {
                             Total Price: ₹{options[0]["full"]} {/* Showing the full price by default */}
                         </div>
                     </div>
+                    <hr></hr>
+                    <button className='btn btn-success justify-center ms-2' onClick={handleAddCart}>Add to Cart</button>
                 </div>
             </div>
         </div>
