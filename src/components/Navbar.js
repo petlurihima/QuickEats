@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Badge from 'react-bootstrap/Badge'
 import { Link,useNavigate } from 'react-router-dom'
-export default function Navbar() {
+import { Model } from '../Model';
+import Cart from '../screens/Cart';
+import {useCart} from './ContextReducer';
 
+
+export default function Navbar() {
+    let data = useCart();
+    const [cartView,setCartView]=useState(false)
     const navigate=useNavigate();
     const handleLogout=()=>{
         localStorage.removeItem("authToken");
@@ -32,9 +39,11 @@ export default function Navbar() {
                     </div>
                     :
                     <>
-                    <div className='btn bg-white text-success mx-2'>
-                        My Cart
+                    <div className='btn bg-white text-success mx-2' onClick={()=>{setCartView(true)}}>
+                        My Cart {" "}
+                        <Badge pill bg="danger">{data.length}</Badge>
                     </div>
+                    {cartView?<Model onClose={()=>setCartView(false)}><Cart/></Model>:null}
                     <div className='btn bg-white text-danger mx-2' onClick={handleLogout}>
                         Logout
                     </div>

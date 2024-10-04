@@ -12,8 +12,26 @@ export const Card = (props) => {
     const [size, setSize] = useState("");
 
     const handleAddCart = async() => {
-        await dispatch({ type: "ADD", id: props.foodItem._id, name: props.foodItem.name, price:finalPrice,qty:qty,size:size})
-        console.log(data);
+
+        let food=null;
+        for(const item of data){
+            if (item.id === props.foodItem._id && item.size === size){
+                food=item;
+                break;
+            }
+        }
+        if(food){
+            await dispatch({
+                type: 'UPDATE',
+                id: props.foodItem._id,
+                size: size,
+                price: finalPrice,
+                qty: qty
+            });
+        }
+        else{
+            await dispatch({ type: "ADD", id: props.foodItem._id, name: props.foodItem.name, price: finalPrice, qty: qty, size: size })
+        }
     };
 
     let finalPrice=qty * parseInt(options[size]);
