@@ -7,31 +7,57 @@ export const Card = (props) => {
     const priceRef=useRef();
     let options = props.options || {}; 
     let priceOptions = Object.keys(options); 
-
     const [qty, setQty] = useState(1);
     const [size, setSize] = useState("");
 
     const handleAddCart = async() => {
 
-        let food=null;
+        let food=[];
         for(const item of data){
-            if (item.id === props.foodItem._id && item.size === size){
+            if (item.id === props.foodItem._id){
                 food=item;
                 break;
             }
         }
-        if(food){
+        if (food) {
+            if (food.size === size) {
+                await dispatch({ type: "UPDATE", id: props.foodItem._id, price: finalPrice, qty: qty });
+            } else {
+                await dispatch({
+                    type: "ADD",
+                    id: props.foodItem._id,
+                    name: props.foodItem.name,
+                    price: finalPrice,
+                    qty: qty,
+                    size: size,
+                    img: props.foodItem.img
+                });
+                console.log("Size different so simply ADD one more to the list");
+            }
+        } else {
             await dispatch({
-                type: 'UPDATE',
+                type: "ADD",
                 id: props.foodItem._id,
-                size: size,
+                name: props.foodItem.name,
                 price: finalPrice,
-                qty: qty
+                qty: qty,
+                size: size,
+                img: props.foodItem.img
             });
         }
-        else{
-            await dispatch({ type: "ADD", id: props.foodItem._id, name: props.foodItem.name, price: finalPrice, qty: qty, size: size })
-        }
+        // if (food !== []) {
+        //     if (food.size === size) {
+        //         await dispatch({ type: "UPDATE", id: props.foodItem._id, price: finalPrice, qty: qty })
+        //     }
+        //     else if (food.size !== size) {
+        //         await dispatch({ type: "ADD", id: props.foodItem._id, name:props.foodItem.name, price: finalPrice, qty: qty, size: size, img: props.foodItem.img })
+        //         console.log("Size different so simply ADD one more to the list")
+        //     }
+        //     return
+        // }
+        // else{
+        //     await dispatch({ type: "ADD", id: props.foodItem._id, name:props.foodItem.name, price: finalPrice, qty: qty, size: size,img:props.foodItem.img })
+        // }
     };
 
     let finalPrice=qty * parseInt(options[size]);
@@ -58,8 +84,8 @@ export const Card = (props) => {
                                 ))}
                             </select>
                             <select className='m-2 h-100 bg-success rounded' ref={priceRef} onChange={(e) => setSize(e.target.value)}>
-                                {priceOptions.map((data)=>{
-                                    return <option key={data} value={data}>{data}</option>
+                                {priceOptions.map((i) => {
+                                    return <option key={i} value={i}>{i}</option>
                                 })}
                             </select>
                         </div>
