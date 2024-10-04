@@ -108,11 +108,11 @@ export const Home = () => {
                     )
                       .map((filteredItem) => (
                         <div key={filteredItem._id} className="col-12 col-md-6 col-lg-3 mb-3 me-5">
-                          <Card
-                            foodName={filteredItem.name}
-                            options={filteredItem.options}
-                            imgsrc={filteredItem.img}
-                            description={filteredItem.description}
+                          <Card foodItem={filteredItem}
+                            // foodName={filteredItem.name}
+                            options={filteredItem.options[0]}
+                            // imgsrc={filteredItem.img}
+                            // description={filteredItem.description}
                           />
                         </div>
                       ))
