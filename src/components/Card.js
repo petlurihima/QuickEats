@@ -19,10 +19,11 @@ export const Card = (props) => {
                 break;
             }
         }
-        if (food) {
+        if(food!==[]) {
             if (food.size === size) {
                 await dispatch({ type: "UPDATE", id: props.foodItem._id, price: finalPrice, qty: qty });
-            } else {
+                return 
+            } else if(food.size!==size){
                 await dispatch({
                     type: "ADD",
                     id: props.foodItem._id,
@@ -30,34 +31,21 @@ export const Card = (props) => {
                     price: finalPrice,
                     qty: qty,
                     size: size,
-                    img: props.foodItem.img
                 });
-                console.log("Size different so simply ADD one more to the list");
-            }
-        } else {
-            await dispatch({
+                return
+                // console.log("Size different so simply ADD one more to the list");
+                }
+            return 
+        } 
+        await dispatch({
                 type: "ADD",
                 id: props.foodItem._id,
                 name: props.foodItem.name,
                 price: finalPrice,
                 qty: qty,
-                size: size,
-                img: props.foodItem.img
+                size: size
             });
-        }
-        // if (food !== []) {
-        //     if (food.size === size) {
-        //         await dispatch({ type: "UPDATE", id: props.foodItem._id, price: finalPrice, qty: qty })
-        //     }
-        //     else if (food.size !== size) {
-        //         await dispatch({ type: "ADD", id: props.foodItem._id, name:props.foodItem.name, price: finalPrice, qty: qty, size: size, img: props.foodItem.img })
-        //         console.log("Size different so simply ADD one more to the list")
-        //     }
-        //     return
-        // }
-        // else{
-        //     await dispatch({ type: "ADD", id: props.foodItem._id, name:props.foodItem.name, price: finalPrice, qty: qty, size: size,img:props.foodItem.img })
-        // }
+
     };
 
     let finalPrice=qty * parseInt(options[size]);

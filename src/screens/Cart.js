@@ -12,17 +12,12 @@ export default function Cart() {
             </div>
         )
     }
-    // const handleRemove = (index)=>{
-    //   console.log(index)
-    //   dispatch({type:"REMOVE",index:index})
-    // }
+    
+    let totalPrice = data.reduce((total, food) => total + food.price, 0)
 
     const handleCheckOut = async () => {
         let userEmail = localStorage.getItem("userEmail");
-        // console.log(data,localStorage.getItem("userEmail"),new Date())
         let response = await fetch("http://localhost:8080/api/auth/orderData", {
-            // credentials: 'include',
-            // Origin:"http://localhost:3000/login",
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -39,7 +34,6 @@ export default function Cart() {
         }
     }
 
-    let totalPrice = data.reduce((total, food) => total + food.price, 0)
     return (
         <div>
 
