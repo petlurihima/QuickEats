@@ -14,15 +14,14 @@ const reducer=(state,action)=>{
         case "DROP":
             return []
         case "UPDATE":
-            let arr = [...state]
-            arr.find((food, index) => {
-                if (food.id === action.id) {
-                    console.log(food.qty, parseInt(action.qty), action.price + food.price)
-                    arr[index] = { ...food, qty: parseInt(action.qty) + food.qty, price: action.price + food.price }
+            return state.map(food => {
+                if (food.id === action.id && food.size === action.size) {
+                    const newQty = food.qty + parseInt(action.qty);
+                    const newTotalPrice = newQty * (action.options[food.size] ? parseInt(action.options[food.size]) : 0); 
+                    return { ...food, qty: newQty, price: newTotalPrice }; 
                 }
-                return arr
-            })
-            return arr
+                return food; // Return unchanged food item
+            });
         default:
             console.log("Error in Reducer");
     }

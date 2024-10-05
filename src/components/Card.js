@@ -9,35 +9,34 @@ export const Card = (props) => {
     let priceOptions = Object.keys(options); 
     const [qty, setQty] = useState(1);
     const [size, setSize] = useState("");
+    const [finalPrice, setFinalPrice] = useState(0);
 
-    const handleAddCart = async() => {
+    useEffect(() => {
+        setSize(priceRef.current.value);
+        setQty(1);
+    }, [options]);
 
-        let food=[];
-        for(const item of data){
-            if (item.id === props.foodItem._id){
-                food=item;
-                break;
-            }
-        }
-        if(food!==[]) {
-            if (food.size === size) {
-                await dispatch({ type: "UPDATE", id: props.foodItem._id, price: finalPrice, qty: qty });
-                return 
-            } else if(food.size!==size){
-                await dispatch({
-                    type: "ADD",
-                    id: props.foodItem._id,
-                    name: props.foodItem.name,
-                    price: finalPrice,
-                    qty: qty,
-                    size: size,
-                });
-                return
-                // console.log("Size different so simply ADD one more to the list");
-                }
-            return 
-        } 
-        await dispatch({
+    useEffect(() => {
+        const pricePerItem = options[size] ? parseInt(options[size]) : 0;
+        setFinalPrice(qty * pricePerItem);
+    }, [qty, size, options]); // Recalculate finalPrice when qty or size changes
+
+    const handleAddCart = async () => {
+        let food = data.find(item => item.id === props.foodItem._id && item.size === size);
+
+        if (food) {
+            // If food item exists and sizes match, update the quantity
+            await dispatch({
+                type: "UPDATE",
+                id: props.foodItem._id,
+                price: finalPrice,
+                qty: qty,
+                size: size,
+                options: options  
+            });
+        } else {
+            // If not found, add the new item
+            await dispatch({
                 type: "ADD",
                 id: props.foodItem._id,
                 name: props.foodItem.name,
@@ -45,13 +44,8 @@ export const Card = (props) => {
                 qty: qty,
                 size: size
             });
-
+        }
     };
-
-    let finalPrice=qty * parseInt(options[size]);
-    useEffect(()=>{
-        setSize(priceRef.current.value)
-    },[])
 
     return (
         <div>
@@ -59,11 +53,11 @@ export const Card = (props) => {
                 <img
                     src={props.foodItem.img}
                     alt={props.foodItem.name}
-                    style={{ height: "150px", objectFit: "cover" }} // Adjust image height and fit
+                    style={{ height: "150px", objectFit: "cover" }} 
                 />
                 <div className="card-body">
                     <h5 className="card-title">{props.foodItem.name}</h5>
-                    <p className="card-text">{props.foodItem.description}</p> {/* Displaying description */}
+                    <p className="card-text">{props.foodItem.description}</p> 
                     <div className='container w-100'>
                         <div className='d-flex'>
                             <select className='m-2 h-100 bg-success rounded' onChange={(e) => setQty(e.target.value)}>
