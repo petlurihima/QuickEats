@@ -46,13 +46,6 @@ export const Home = () => {
                 value={search} onChange={(e)=>{setSearch(e.target.value)}}
                 style={{ width: "40%" }}
               />
-              {/* <button
-                className="btn btn-outline-success text-white bg-success"
-                type="submit"
-                style={{ marginLeft: "10px" }}
-              >
-                Search
-              </button> */}
             </div>
           </div>
           <div className="carousel-item active">
@@ -81,13 +74,11 @@ export const Home = () => {
           </div>
         </div>
 
-        {/* Carousel Previous Button */}
         <button className="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
           <span className="carousel-control-prev-icon" aria-hidden="true"></span>
           <span className="visually-hidden">Previous</span>
         </button>
 
-        {/* Carousel Next Button */}
         <button className="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
           <span className="carousel-control-next-icon" aria-hidden="true"></span>
           <span className="visually-hidden">Next</span>
@@ -104,15 +95,12 @@ export const Home = () => {
                   foodItem
                     .filter((item) =>
                       item.CategoryName === data.categoryName &&
-                      item.name.toLowerCase().includes(search.toLowerCase()) // Ensure case-insensitive search
+                      item.name.toLowerCase().includes(search.toLowerCase()) 
                     )
                       .map((filteredItem) => (
                         <div key={filteredItem._id} className="col-12 col-md-6 col-lg-3 mb-3 me-5">
                           <Card foodItem={filteredItem}
-                            // foodName={filteredItem.name}
                             options={filteredItem.options[0]}
-                            // imgsrc={filteredItem.img}
-                            // description={filteredItem.description}
                           />
                         </div>
                       ))
