@@ -1,70 +1,142 @@
-# Getting Started with Create React App
+# QuickEats
+QuickEats is a full-stack food ordering application built using the **MERN stack** (MongoDB, Express.js, React.js, and Node.js). Users can browse food items, add them to their cart, place orders, and view their order history. The app also includes user authentication with login and signup functionalities.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Features
 
-## Available Scripts
+- **User Authentication**: Users can sign up, log in, and log out. Authentication is handled using JWT tokens.
+- **Food Ordering**: Users can browse a variety of food items, add them to the cart, and place orders.
+- **Cart**: Users can manage their food items in the cart.
+- **Order History**: Users can view their past orders.
+- **Responsive UI**: Built with React, ensuring the app is accessible and easy to use.
 
-In the project directory, you can run:
+## Tech Stack
 
-### `npm start`
+- **Frontend**: React.js
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB
+- **Authentication**: JSON Web Tokens (JWT)
+  
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Prerequisites
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Before you can run the project, you will need:
 
-### `npm test`
+- **Node.js** installed on your machine
+- **MongoDB** (either locally or a cloud instance like MongoDB Atlas)
+  
+### Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository:
 
-### `npm run build`
+   ```bash
+   git clone https://github.com/your-username/quickeats.git
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Navigate to the project directory:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```bash
+   cd quickeats
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Install the required dependencies for both the client and server:
 
-### `npm run eject`
+   ```bash
+   # Install backend dependencies
+   cd backend
+   npm install
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   # Install frontend dependencies
+   cd ../frontend
+   npm install
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Configuration
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. **Backend Configuration**:
+   - Create a `.env` file in the `backend` directory and add the following environment variables:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+     ```bash
+     MONGO_URI=<your-mongodb-uri>
+     JWT_SECRET=<your-jwt-secret>
+     ```
 
-## Learn More
+   - Example `.env`:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+     ```bash
+     MONGO_URI=mongodb://localhost:27017/quickeats
+     JWT_SECRET=mysecretkey
+     ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. **Frontend Configuration**:
+   - Make sure that the frontend is pointing to the correct backend server. Check the API endpoints in your React components (e.g., `fetch("http://localhost:8080/api/...")`).
 
-### Code Splitting
+### Running the Application
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. **Run the backend server**:
+   In the `backend` folder, run the following command to start the backend server:
 
-### Analyzing the Bundle Size
+   ```bash
+   npm start
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+   The backend will run on `http://localhost:8080`.
 
-### Making a Progressive Web App
+2. **Run the frontend server**:
+   In the `frontend` folder, run the following command to start the frontend React app:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+   ```bash
+   npm start
+   ```
 
-### Advanced Configuration
+   The frontend will run on `http://localhost:3000`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Project Structure
 
-### Deployment
+```bash
+quickeats/
+│
+├── backend/               # Backend (Node.js & Express)
+│   ├── models/            # Mongoose models (User, Orders, etc.)
+│   ├── routes/            # Express routes (API endpoints)
+│   └── index.js          # Entry point for backend
+│
+├── frontend/              # Frontend (React.js)
+│   ├── src/
+│   │   ├── components/    # Reusable components (Navbar, Footer, etc.)
+│   │   ├── screens/       # Pages (Home, Login, Signup, Orders, Cart)
+│   │   ├── App.js         # Main React App component
+│   │   └── index.js       # Entry point for React
+│
+├── README.md              # This README file
+└── package.json           # Project dependencies and scripts
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## API Endpoints
 
-### `npm run build` fails to minify
+### Authentication
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- `POST /api/auth/signup`: Register a new user
+- `POST /api/auth/login`: Authenticate an existing user
+
+### Orders
+
+- `POST /api/myOrderData`: Fetch the user's order history
+
+### Cart
+
+- `POST /api/cart`: Add items to the user's cart
+- `GET /api/cart`: Get the user's cart items
+
+## Usage
+
+1. **Signup/Login**: Users can create an account or log in using an existing account.
+2. **Browse Food Items**: Browse available food items and add them to the cart.
+3. **Place an Order**: Once the cart is filled, place an order, which will be saved in the database.
+4. **View Order History**: Check past orders on the "My Orders" page.
+
+## Future Enhancements
+
+- **Payment Integration**: Integrate payment gateways for placing orders.
+- **Admin Panel**: Add functionality for restaurant owners/admins to manage food items and orders.
+- **Real-time Order Tracking**: Implement order status updates in real time.
